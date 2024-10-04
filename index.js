@@ -1,7 +1,10 @@
 import express from 'express';
+import { apiRouter } from './api/apiRouter.js';
 
 const app = express();
 const port = 5114;
+
+app.use('/api', apiRouter);
 
 app.get('/', (req, res) => {
     return res.send('HOME PAGE')
