@@ -4,6 +4,13 @@ import { apiRouter } from './api/apiRouter.js';
 const app = express();
 const port = 5114;
 
+app.use(express.json({
+    type: 'application/json',
+}));
+app.use(express.urlencoded({
+    extended: true,
+}));
+
 app.use('/api', apiRouter);
 
 app.get('/', (req, res) => {
